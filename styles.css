@@ -1,0 +1,24 @@
+@font-face {
+    font-family: Bahnschrift;
+    src: url(fonts/BAHNSCHRIFT.TTF);
+  }
+
+html {
+    width: 3480px;
+    height: 1080px;
+}
+
+header {
+    background-color: rgb(234, 232, 232);
+    margin: -8px;
+    margin-top: -18px;
+}
+
+#next-station-main-title {
+    font-family: Bahnschrift;
+}
+
+#next-station-secondary-title {
+    font-family: Bahnschrift;
+    color: gray;
+}
