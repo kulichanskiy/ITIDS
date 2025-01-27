@@ -7,33 +7,31 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="next-station-text">
-            <h1>Next station: <span id="next-station-en">Commercial-Broadway</span></h1>
-            <h3>Le prochain arrêt: <span id="next-station-fr">Commercial-Broadway</span></h3>
-        </div>
-        <div class="station-connections-container">
-
-        </div>
-    </header>
-
     <main>
         <section class="route">
             <!-- Линия маршрута -->
             <div class="route-container">
+                <div class="next-station-text">
+                    <p>Next station: <span id="next-station-en">Commercial-Broadway</span></p>
+                    <p>Le prochain arrêt: <span id="next-station-fr">Commercial-Broadway</span></p>
+                </div>
+                <div class="station-connections-container">
                 <div class="station-line">
                     <!-- Станции -->
                     <div class="station active" id="station-1">Nanaimo</div>
                     <div class="station" id="station-2">Main Street-Science World</div>
                     <div class="station" id="station-3">Stadium-Chinatown</div>
                 </div>
-
-                <!-- Динамическая линия -->
                 <div class="progress-container">
                     <div class="progress-bar"></div>
                     <div class="train-marker"></div>
                 </div>
             </div>
+            <div id="line-info">
+                <span id="route-logo"><img src="img/line_logo/expo_line.png" alt="ExpoLine"></span>
+                <span id="destination-name"><strong>Waterfront</strong></span>
+            </div>
+            <div class="time"><span id="current-time">10:20AM</span></div>
         </section>
 
         <!-- Блок для рекламы -->
@@ -41,15 +39,6 @@
             Advertisements
         </aside>
     </main>
-
-    <footer>
-        <div id="line-info">
-            <span id="route-logo"><img src="img/line_logo/expo_line.png" alt="ExpoLine"></span>
-            <span id="destination-name"><strong>Waterfront</strong></span>
-        </div>
-        <div class="time" id="current-time">10:43 AM</div>
-    </footer>
-
     <script src="script.js"></script>
 </body>
 </html>

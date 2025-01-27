@@ -127,5 +127,9 @@ footer {
 }
  #line-info {
     align-items: center;
-    display: flex;
+    display: inline;
+    width: 100%;
+    background-color: gainsboro;
+    z-index: 1;
+    
  }
