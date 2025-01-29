@@ -9,11 +9,24 @@
 <body>
     <main>
         <section class="route">
-            <!-- Линия маршрута -->
             <div class="route-container">
-                <div class="next-station-text">
-                    <p>Next station: <span id="next-station-en">Commercial-Broadway</span></p>
-                    <p>Le prochain arrêt: <span id="next-station-fr">Commercial-Broadway</span></p>
+                <div class="next-station">
+                    <div class="next-station-text">
+                        <p class="next-stn-en-text">Next station: </p>
+                        <p class="next-stn-fr-text">Le prochain arrêt:</p>
+                    </div>
+                    <div class="next-station-container">
+                        <span class="station-name-formats" id="next-station-en">Commercial-Broadway</span>
+                        <div class="next-stn-connections">
+                            <img src="img/next-stn-connections/milline_logo.png" alt="Millenium Line">
+                            <img src="img/next-stn-connections/bus_icon.png" alt="Buses">
+                            <img src="img/next-stn-connections/99b_line_icon.png" alt="99-B Line">
+                        </div>
+                    </div>
+                    <div class="next-station-exit-doors-container">
+                        <img id="stn-door-direction-left" src="img/exit_left.png" alt="Exit left">
+                        <img id="stn-door-direction-right" src="img/exit_right.png" alt="Exit right">
+                    </div>
                 </div>
                 <div class="station-connections-container">
                 <div class="station-line">
@@ -27,18 +40,24 @@
                     <div class="train-marker"></div>
                 </div>
             </div>
-            <div id="line-info">
-                <span id="route-logo"><img src="img/line_logo/expo_line.png" alt="ExpoLine"></span>
-                <span id="destination-name"><strong>Waterfront</strong></span>
-            </div>
-            <div class="time"><span id="current-time">10:20AM</span></div>
         </section>
 
         <!-- Блок для рекламы -->
         <aside class="advertisements">
             Advertisements
         </aside>
+        
     </main>
+    <footer>
+        <div id="line-info">
+            <div class="destination-container">
+                <span id="route-logo"><img src="img/line_logo/expo_line.png" alt="ExpoLine"></span>
+                <span id="destination-name"><strong>Waterfront</strong></span>
+            </div>
+            <div class="time"><span id="current-time">10<span id="blinking-colon">:</span>20AM</span></div>
+        </div>
+    </footer>
     <script src="script.js"></script>
+
 </body>
 </html>
