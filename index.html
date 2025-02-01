@@ -20,7 +20,8 @@
                         <div class="next-stn-connections">
                             <img src="img/next-stn-connections/milline_logo.png" alt="Millenium Line">
                             <img src="img/next-stn-connections/bus_icon.png" alt="Buses">
-                            <img src="img/next-stn-connections/99b_line_icon.png" alt="99-B Line">
+                            <img src="img/next-stn-connections/99b_line_icon.png" alt="99-B">
+                            <!-- <div class="b-line-bus" style="height: vh;">992</div> -->
                         </div>
                     </div>
                     <div class="next-station-exit-doors-container">
@@ -28,21 +29,47 @@
                         <img id="stn-door-direction-right" src="img/exit_right.png" alt="Exit right">
                     </div>
                 </div>
-                <div class="station-connections-container">
-                <div class="station-line">
-                    <!-- Станции -->
-                    <div class="station active" id="station-1">Nanaimo</div>
-                    <div class="station" id="station-2">Main Street-Science World</div>
-                    <div class="station" id="station-3">Stadium-Chinatown</div>
-                </div>
-                <div class="progress-container">
-                    <div class="progress-bar"></div>
-                    <div class="train-marker"></div>
+                <div class="route-visuals-wrapper">
+                    <div class="station-line-top">
+                        <div class="station active" id="station-1">
+                            <span id="prev-station-disp">Nanaimo</span>
+                            <div class="station-connections" id="stn-1-cons">
+                                <img src="img/next-stn-connections/bus_icon.png" alt="Buses">
+                            </div>
+                        </div>
+                        <div class="station" id="station-3">
+                            <span id="next-next-station-disp">Main Street-<br>Science World</span>
+                            <div class="station-connections" id="stn-3-cons">
+                                <img src="img/next-stn-connections/via_rail.png" alt="VIA-RAIL">
+                                <img src="img/next-stn-connections/bus_icon.png" alt="Buses">
+                            </div>
+                        </div>
+                        <div class="station-markers">
+                            <div class="station-dot-marker" id="stn-dot-1"></div>
+                            <div class="station-dot-marker active" id="stn-dot-2"></div>
+                            <div class="station-dot-marker active" id="stn-dot-3"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-container">
+                        <div class="progress-bar"></div>
+                        <div class="train-marker"></div>
+                    </div>
+                    <div class="station-line-bot">
+                        <div class="station" id="station-2">
+                            <span id="next-station-disp">Commercial-<br>Broadway</span>
+                            <div class="station-connections" id="stn-2-cons">
+                                <img src="img/next-stn-connections/milline_logo.png" alt="Millenium Line">
+                                <img src="img/next-stn-connections/bus_icon.png" alt="Buses">
+                                <img src="img/next-stn-connections/99b_line_icon.png" alt="99-B Line">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Блок для рекламы -->
+        <!-- Advertisement -->
         <aside class="advertisements">
             Advertisements
         </aside>
@@ -54,10 +81,10 @@
                 <span id="route-logo"><img src="img/line_logo/expo_line.png" alt="ExpoLine"></span>
                 <span id="destination-name"><strong>Waterfront</strong></span>
             </div>
-            <div class="time"><span id="current-time">10<span id="blinking-colon">:</span>20AM</span></div>
+            <div class="time"><span id="current-hour">10</span><span id="blinking-colon">:</span><span id="current-minutes-period">20AM</span></div>
         </div>
     </footer>
-    <script src="script.js"></script>
 
+    <script type="module" src="script.js"></script>
 </body>
 </html>

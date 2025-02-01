@@ -3,6 +3,15 @@
     src: url(fonts/bahnschrift.ttf);
 }
 
+@font-face {
+    font-family: ffmeta;
+    src: url(fonts/meta-normal.ttf);
+}
+
+:root {
+    --route-color: #005aa7;  /* Определяем переменную */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -54,6 +63,7 @@ main {
     padding: 20px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 /* NEXT STATION BLOCK */
@@ -62,6 +72,12 @@ main {
     display: flex;
     flex-direction: row;
     align-items: center;
+    z-index: 1;
+    background-color: rgb(243, 243, 243);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 1vh;
+    max-height: 33%;
 }
 
 
@@ -100,7 +116,10 @@ main {
 }
 
 .next-station-exit-doors-container {
-    
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    order: 1;
 }
 
 
@@ -108,21 +127,66 @@ main {
     max-height: 5.5vh;
 }
 
-/* Станции */
-.station-line {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.station {
-    font-size: 1.2rem;
+.bold-horizontal-line {
+    margin-top: 3vh;
+    margin-bottom: 3vh;
     color: gray;
 }
 
+.route-visuals-wrapper {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.station-line-top {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-bottom: 3vh;
+    margin-left: 3vh;
+    margin-right: 3vh;
+    text-align: center;
+}
+
+.station-line-bot {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    margin-top: 3vh;
+    text-align: center;
+    justify-content: center;
+}
+
+.station-connections {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.station-connections img {
+    margin-left: 0.5vh;
+    height: 2vh;
+}
+
+.station {
+    position: relative;
+    font-size: 1.2rem;
+    color: gray;
+    margin-top: auto;
+}
+
 .station.active {
+    position: relative;
     color: black;
     font-weight: bold;
+    margin-top: auto;
+}
+
+#station-2 {
+    position: relative;
 }
 
 /* Линия прогресса */
@@ -139,7 +203,7 @@ main {
     position: absolute;
     height: 100%;
     width: 33%; /* Ширина будет изменяться скриптом */
-    background-color: blue;
+    background-color: var(--route-color);
     transition: width 0.5s ease-in-out;
 }
 
@@ -152,6 +216,33 @@ main {
     background-color: black;
     border-radius: 50%;
     transform: translateX(-50%);
+}
+
+.station-markers {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+    margin-left: 2.5%;
+    z-index: 2;
+    margin-top: 10vh;
+}
+
+.station-dot-marker {
+    background-color: white;
+    border-radius: 50%;
+    width: 4vh;
+    height: 4vh;
+    border: 5px solid rgb(199, 199, 199);
+}
+
+.station-dot-marker.active {
+    background-color: white;
+    border-radius: 50%;
+    width: 4vh;
+    height: 4vh;
+    border: 5px solid var(--route-color);
 }
 
 /* Реклама */
@@ -177,8 +268,8 @@ footer {
 }
 
 #route-logo img{
-    width: 4vh;
-    height: 4vh;
+    width: 5vh;
+    height: 5vh;
     margin-right: 1vh;
 }
  #line-info {
@@ -194,7 +285,54 @@ footer {
     z-index: 1;
  }
 
- .destination-container {
-    align-items: center;
-    display: flex;
+ #blinking-colon {
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
  }
+
+ #blinking-colon.active {
+    opacity: 100;
+    transition: opacity 0.3s ease-in;
+ }
+
+ .destination-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+
+
+/* Bus styles */
+
+.default-bus {
+    color: white;
+    background-color: rgba(66,110,149,255);
+    padding: 5% 10%;
+
+}
+
+.b-line-bus {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    color: white;
+    background-color: rgba(244,121,33,255);
+    width: auto;
+    padding: 0% 12%;
+    font-size: min(5vw, 5vh, 230%);
+    font-family: ffmeta, sans-serif;
+    line-height: 1;
+    border-radius: 5px;
+}
+
+.rapid-bus {
+    color: white;
+    background-color: rgba(0,160,73,255);
+    padding: 5% 10%;
+}
+
+.night-bus {
+    color: white;
+    background-color: rgba(36,94,134,255);
+    padding: 5% 10%;
+}
