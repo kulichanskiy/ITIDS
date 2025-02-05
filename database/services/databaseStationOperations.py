@@ -11,7 +11,7 @@ db_path = os.path.join(PARENT_DIR, "itids.db")
 def fetch_station_row(station_id):
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
-    cursor.execute("SELECT StationID, NameEn, NameFr, Zone, Connects FROM Stations WHERE StationID = ?", (station_id,))
+    cursor.execute("SELECT StationID, NameEn, NameFr, Zone, ExitInbound, ExitOutbound FROM Stations WHERE StationID = ?", (station_id,))
     result = cursor.fetchone()
     cursor.execute("SELECT ConnectionID FROM StationConnections WHERE StationID = ?", (station_id,))
     connections_id = cursor.fetchall()
@@ -22,7 +22,9 @@ def fetch_station_row(station_id):
             "station_name_en": result[1],
             "station_name_fr": result[2],
             "zone": result[3],
-            "connections": [connections_id[0] for connections_id in connections_id]
+            "connections": [connections_id[0] for connections_id in connections_id],
+            "exit_inbound": result[4],
+            "exit_outbound": result[5]
         }
     else:
         return None

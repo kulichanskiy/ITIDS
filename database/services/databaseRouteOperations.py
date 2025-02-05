@@ -9,7 +9,7 @@ db_path = os.path.join(PARENT_DIR, "itids.db")
 def fetch_route_row(station_id):
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
-    cursor.execute("SELECT RouteID, RouteName, LogoLocation, DestStation FROM Routes WHERE RouteID = ?", (station_id,))
+    cursor.execute("SELECT RouteID, RouteName, LogoLocation, DestStation, Direction FROM Routes WHERE RouteID = ?", (station_id,))
     result = cursor.fetchone()
     cursor.execute("SELECT StationOrder FROM Routes WHERE RouteID = ?", (station_id,))
     stn_order = cursor.fetchone()
@@ -24,6 +24,7 @@ def fetch_route_row(station_id):
             "route_name": result[1],
             "logo_location": result[2],
             "destination_id": result[3],
+            "direction": result[4],
             "station_order_ids": station_order_ids
         }
     else:
