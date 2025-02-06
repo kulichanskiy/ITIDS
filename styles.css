@@ -9,7 +9,9 @@
 }
 
 :root {
-    --route-color: #005aa7;  /* Определяем переменную */
+    --route-color: #005aa7;
+    --panel-background-color: white;
+    --inactive-color:rgb(199, 199, 199);
 }
 
 * {
@@ -199,18 +201,49 @@ main {
     overflow: hidden;
 }
 
-.progress-bar {
+.progress-bar-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#progress-bar-before-prev-stn,
+#progress-bar,
+#progress-bar-after-next-stn,
+#progress-bar-end {
     position: absolute;
     height: 100%;
-    width: 33%; /* Ширина будет изменяться скриптом */
+    transition: width 0.3s ease-in-out;
+}
+
+#progress-bar-before-prev-stn {
+    left: 0;
+    width: 15%;
+    background-color: var(--inactive-color);
+}
+
+#progress-bar {
+    left: 15%;
+    width: 35%;
     background-color: var(--route-color);
-    transition: width 0.5s ease-in-out;
+}
+
+#progress-bar-after-next-stn {
+    left: 50%;
+    width: 35%;
+    background-color: var(--route-color);
+}
+
+#progress-bar-end {
+    left: 85%;
+    width: 15%;
+    background-color: var(--route-color);
 }
 
 .train-marker {
     position: absolute;
     top: -5px;
-    left: 33%; /* Позиция маркера */
+    left: 15%; /* Позиция маркера */
     width: 20px;
     height: 20px;
     background-color: black;
@@ -234,7 +267,7 @@ main {
     border-radius: 50%;
     width: 4vh;
     height: 4vh;
-    border: 5px solid rgb(199, 199, 199);
+    border: 5px solid var(--inactive-color);
 }
 
 .station-dot-marker.active {
@@ -335,4 +368,57 @@ footer {
     color: white;
     background-color: rgba(36,94,134,255);
     padding: 5% 10%;
+}
+
+
+
+
+
+/* CONTROL CENTER HTML */
+
+.control-center {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 45%;
+    padding: 5px;
+    border: 2px solid black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 48px;
+    font-style: normal;
+}
+
+.control-center-row {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.control-center-row button {
+    max-width: 30%;
+    padding: 3px;
+    margin-left: 4px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+}
+.control-center-row p, label {
+    font-size: 12px;
+    padding: 3px;
+    margin-left: 4px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+}
+.control-center-row select {
+    font-size: 16px;
+    padding: 2px;
+    margin-left: 4px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+}
+
+.cc-bot {
+    height: 50px;
 }

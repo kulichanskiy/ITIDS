@@ -52,7 +52,12 @@
                     </div>
 
                     <div class="progress-container">
-                        <div class="progress-bar"></div>
+                        <div class="progress-bar-container">
+                            <div id="progress-bar-before-prev-stn"></div>
+                            <div id="progress-bar"></div>
+                            <div id="progress-bar-after-next-stn"></div>
+                            <div id="progress-bar-end"></div>
+                        </div>
                         <div class="train-marker"></div>
                     </div>
                     <div class="station-line-bot">
@@ -84,6 +89,60 @@
             <div class="time"><span id="current-hour">10</span><span id="blinking-colon">:</span><span id="current-minutes-period">20AM</span></div>
         </div>
     </footer>
+
+
+    <!-- SECTION BELOW SHOULD BE DELETED WHEN .EXE CONTROL CENTER WILL BE DONE -->
+
+
+    <div class="control-center">
+        <div class="control-center-row">
+            <button id="database-fetcher">Fetch Database</button>
+            <p>PRESS BEFORE SELECTING ROUTE FROM DATABASE</p>
+        </div>
+        <div class="control-center-row">
+            <select id="cc-route-selection">
+                <option value="1">Waterfront</option>
+                <option value="2">Burrard</option>
+                <option value="3">Granville</option>
+            </select>
+            <button id="cc-route-loader">Load Route</button>
+        </div>
+        <div class="control-center-row">
+            <label for="station-id">Check station parameters with ID: </label>
+            <input type="number" name="station-id" id="station-id-input">
+            <button id="cc-station-json-loader">Show</button>
+        </div>
+        <div class="control-center-row">
+            <label for="route-id">Check route parameters with ID: </label>
+            <input type="number" name="route-id" id="route-id-input">
+            <button id="cc-route-json-loader">Show</button>
+        </div>
+        <div class="control-center-row">
+            <label for="connection-id">Check station parameters with ID: </label>
+            <input type="number" name="connection-id" id="connection-id-input">
+            <button id="cc-connection-json-loader">Show</button>
+        </div>
+        <div class="control-center">
+            <div class="control-center-row">
+                <button class="cc-bot" id="act-next-station">Next station</button>
+                <button class="cc-bot" id="act-prev-station">Prev Station</button><br>
+            </div>
+            <div class="control-center-row">
+                <button class="cc-bot" id="act-start-route">Start Route</button>
+                <button class="cc-bot" id="act-pause-route">Pause Route</button>
+                <button class="cc-bot" id="act-end-route-route">To the end</button>
+            </div>
+            <div class="control-center-row">
+                <label for="route-trans-time">Select transition time</label>
+                <select name="route-trans-time" id="cc-route-selection">
+                    <option value="1">3s</option>
+                    <option value="2">10s</option>
+                    <option value="3">1m</option>
+                </select>
+            </div>
+        </div>
+
+    </div>
 
     <script type="module" src="script.js"></script>
 </body>
