@@ -4,6 +4,9 @@
 ITIDS is an innovative system designed to provide real-time transit information through intelligent display units located within public transportation systems such as subways, buses, and trains. This system aims to improve the passenger experience by displaying important information like station names, arrival times, transfers, and more, while integrating additional features such as advertising space. The system utilizes the structure of the Vancouver Metro system, which is managed by TransLink, as its foundational layout for station and route data.
 
 
+## [Project Documentation](ITIDS_project_doucmentation.pdf) (DFD, E-R, Feasibility Analysis, Designs, etc.)
+
+
 ## Features
 - **Real-time Transit Information:** Displays upcoming station names, arrival times, and connecting transport services.
 - **Multimedia Support:** Includes space for advertisements and visual content to enhance user engagement.
