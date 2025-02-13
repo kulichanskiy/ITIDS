@@ -2,7 +2,7 @@ import { getTime } from "./modules/getTime.js";
 import { updateRoute } from "./modules/routeLine.js";
 import { blinkTimeColon } from "./modules/blinkingColon.js";
 import * as dbFetcher from "./modules/databaseFetcher.js";
-
+import * as wcc from './modules/webCommandCenter.js'
 
 const stations = [
     { id: "station-1", name: "Nanaimo" },
@@ -38,10 +38,11 @@ const timeUpdate = setInterval(() => {getTime(hours, minutesPeriod)}, 30000);
 
 document.getElementById('cc-station-json-loader').addEventListener('click', () => {
     let input_value = document.getElementById('cc-station-id-input').value;
-    dbFetcher.ccFetchStation(input_value);
+    wcc.getStationParametersByID(input_value)
 })
 
 document.getElementById('cc-connection-json-loader').addEventListener('click', () => {
     let input_value = document.getElementById('cc-connection-id-input').value;
-    dbFetcher.ccFetchConnection(input_value);
+    
 })
+
